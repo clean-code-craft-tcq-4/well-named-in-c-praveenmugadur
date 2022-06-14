@@ -1,26 +1,10 @@
-#include "colorcode.h"
+#ifndef TESTCOLORPAIR_H
+#define TESTCOLORPAIR_H
 
-void testNumberToPair(int pairNumber,
-    enum MajorColor expectedMajor,
-    enum MinorColor expectedMinor)
-{
-    ColorPair colorPair = GetColorFromPairNumber(pairNumber);
-    char colorPairNames[MAX_COLORPAIR_NAME_CHARS];
-    ColorPairToString(&colorPair, colorPairNames);
-    printf("Got pair %s\n", colorPairNames);
-    assert(colorPair.majorColor == expectedMajor);
-    assert(colorPair.minorColor == expectedMinor);
-}
+#include <assert.h>
+#include "ColorPair.h"
 
-void testPairToNumber(
-    enum MajorColor major,
-    enum MinorColor minor,
-    int expectedPairNumber)
-{
-    ColorPair colorPair;
-    colorPair.majorColor = major;
-    colorPair.minorColor = minor;
-    int pairNumber = GetPairNumberFromColor(&colorPair);
-    printf("Got pair number %d\n", pairNumber);
-    assert(pairNumber == expectedPairNumber);
-}
+extern void testNumberToPair(int pairNumber,    MajorColor_type expectedMajor,     MinorColor_type expectedMinor);
+extern void testPairToNumber(     MajorColor_type major,     MinorColor_type minor,     int expectedPairNumber);
+
+#endif
