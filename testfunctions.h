@@ -1,7 +1,6 @@
 #ifndef TESTCOLORPAIR_H
 #define TESTCOLORPAIR_H
 
-#include <assert.h>
 #include "colorcode.h"
 
 extern void testNumberToPair(int pairNumber,    MajorColor_type expectedMajor,     MinorColor_type expectedMinor);
